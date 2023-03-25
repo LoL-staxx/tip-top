@@ -1,0 +1,143 @@
+---
+import Fiesta from "./img/promociones/fiesta.jpg"
+import Promocion from "./img/promociones/promocion.png"
+---
+
+<section class="promocion" id="promocion">
+   <div class="header">
+    <h3>Promociones?</h3>
+    <h1>Hechale un vistaso a estas promociones que tenemos listos para usted</h1>
+   </div>
+
+   <div class="sliders" id="slider">
+        <div class="promociones">
+           <div class="img_promocion"></div>
+        </div>
+
+        <div class="promociones_dos">
+           <div class="img_promocion"></div>
+        </div>
+
+        <div class="yellow">
+            <img src= {Fiesta} alt="">
+        </div>
+   </div>
+</section>
+
+<style>
+.promocion{
+    position: relative;
+    height: 100vh;
+    max-width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20px;
+    background-color: #eee;
+}
+
+.header{
+    text-align: center;
+    margin: 70px;
+}
+
+.header h3{
+    font-size: 1.3em;
+    font-family: 'roboto';
+    color: #2F2D2D;
+    padding-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.header h1{
+    font-size: 1.5em;
+    font-family: 'roboto';
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.sliders{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+}
+
+.sliders::-webkit-scrollbar{
+    display: none;
+}
+
+
+
+.sliders div{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+}
+
+.promociones div{
+    max-width: 300px;
+    height: 100%;
+    background-image: url("./img/promociones/promocion.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+}
+
+.promociones_dos div{
+    max-width: 300px;
+    height: 100%;
+    background-image: url("./img/promociones/promocion2.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+}
+
+.yellow img{
+    max-width: 500px;
+    height: 100%;
+    border-radius: 5px;
+}
+
+@media(max-width: 500px){
+    .header h3{
+        font-size: 1em;
+    }
+
+    .header h1{
+        font-size: 1.3em;
+    }
+
+    .yellow img{
+        width: 350px;
+    }
+}
+
+
+</style>
+
+<script>
+const slider = document.getElementById('slider')
+
+let timer = 5000
+
+    let mul = timer * slider.children.length
+
+    setInterval(() =>{
+            slider.scrollBy(1000, 0)
+      }, timer)
+
+    setInterval(() =>{
+        slider.scrollBy(-6000,0)
+    }, mul)
+
+</script>
