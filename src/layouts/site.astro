@@ -1,0 +1,45 @@
+---
+export interface Props {
+	title: string;
+}
+
+import Nav from "../components/nav-bar.astro"
+import Logo from "../components/img/logo-menu.png"
+import Gallery from "../components/gallery.astro";
+import Menu from "../components/menu.astro"
+import Promociones from "../components/promociones.astro";
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{title}</title>
+    <link rel="shortcut icon" href= {Logo} type="image/x-icon">
+</head>
+<body>
+    <Nav />
+	<Gallery />
+	<Menu />
+	<Promociones />
+
+  <style>
+  html{
+      scroll-behavior: smooth;
+  }
+
+  @media (max-width: 500px){
+      body{
+          overflow-x: hidden;
+      }
+  }
+  
+
+  
+  </style>
+</body>
+</html>
